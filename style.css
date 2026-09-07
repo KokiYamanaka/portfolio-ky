@@ -294,6 +294,42 @@ a {
   padding: 6px 0;
 }
 
+/* skill */
+
+.skill-table-wrap {
+  overflow-x: auto;
+}
+
+.skill-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 800px;
+  border: 1px solid var(--rule);
+}
+
+.skill-table th,
+.skill-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 10px 16px;
+  border: 1px solid var(--rule);
+}
+
+.skill-table th {
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 10px;
+}
+
+.skill-table td ul {
+  margin: 0;
+  padding-left: 16px;
+}
+
+.skill-table td li {
+  padding: 2px 0;
+}
+
 /* projects */
 
 .project-list {
