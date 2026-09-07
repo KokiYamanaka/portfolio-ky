@@ -1,0 +1,448 @@
+:root {
+  --bg: #fbfaf8;
+  --text: #1a1a1a;
+  --muted: #555;
+  --rule: #ddd;
+  --link: #1155cc;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "Yu Gothic", "Noto Sans JP", "Segoe UI", sans-serif;
+  line-height: 1.9;
+  font-size: 11px;
+  overflow-x: hidden;
+}
+
+main, header {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+/* header */
+
+.header {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 64px 24px 40px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.header-text {
+  min-width: 0;
+}
+
+.name {
+  font-weight: 400;
+  font-size: 25px;
+  margin: 0 0 10px;
+}
+
+.tagline {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0 0 20px;
+}
+
+.icon-row {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-row a {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #2b2b2b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-row svg {
+  width: 11px;
+  height: 11px;
+  fill: #fff;
+}
+
+/* sections */
+
+.section {
+  margin: 64px 0;
+}
+
+.section-title {
+  font-weight: 300;
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+.section-subtitle {
+  margin: -20px 0 24px;
+  color: var(--muted);
+}
+
+/* timeline */
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 90px 20px 1fr;
+  padding-bottom: 36px;
+}
+
+.timeline-year {
+  color: var(--muted);
+  font-size: 10px;
+  padding-top: 4px;
+  padding-right: 20px;
+  white-space: nowrap;
+}
+
+.timeline-line {
+  position: relative;
+  border-left: 1px solid var(--rule);
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -4.5px;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--muted);
+}
+
+.timeline-content {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding-left: 20px;
+  min-width: 0;
+}
+
+.timeline-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.timeline-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.timeline-body p {
+  margin: 0;
+}
+
+.timeline-body p + p {
+  margin-top: 6px;
+}
+
+.timeline-body ul {
+  margin: 10px 0 0;
+  padding-left: 20px;
+}
+
+.timeline-body li {
+  padding: 2px 0;
+}
+
+.timeline-clients {
+  margin-top: 10px;
+}
+
+.client-name {
+  margin: 14px 0 4px;
+}
+
+.client-name:first-child {
+  margin-top: 0;
+}
+
+.timeline-clients ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.timeline-clients li {
+  padding: 2px 0;
+}
+
+.entry-images {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.entry-images img {
+  width: 200px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--rule);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox:target {
+  display: flex;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.lightbox img {
+  position: relative;
+  z-index: 1;
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+/* bio */
+
+.bio {
+  color: var(--text);
+  max-width: 700px;
+}
+
+/* selected work */
+
+.work-grid {
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+  border-left: 1px solid var(--rule);
+}
+
+.work-card {
+  display: block;
+  text-decoration: none;
+  color: var(--text);
+  padding: 0 0 28px 24px;
+  margin: 0 0 0 -1px;
+}
+
+.work-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.work-card p {
+  margin: 0;
+  font-size: 10px;
+}
+
+/* writing */
+
+.writing-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.writing-list li {
+  padding: 6px 0;
+}
+
+/* projects */
+
+.project-list {
+  border-top: 1px solid var(--rule);
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.project-thumbs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-thumb {
+  display: block;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.project-text {
+  min-width: 0;
+}
+
+.project-text h3 {
+  margin: 0 0 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.project-text p {
+  margin: 0;
+  color: var(--text);
+}
+
+.project-text ol {
+  margin: 10px 0 0;
+  padding-left: 20px;
+}
+
+.project-text li {
+  padding: 2px 0;
+}
+
+/* shorts */
+
+.shorts-grid {
+  display: flex;
+  gap: 17px;
+}
+
+.short-card {
+  flex: 0 0 auto;
+  width: 188px;
+}
+
+.short-card video,
+.short-card img {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: 4px;
+  background: #000;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.short-card p {
+  margin: 0;
+  font-size: 10px;
+}
+
+.short-card p.short-note {
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+/* misc */
+
+.misc-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.misc-list li {
+  padding: 4px 0;
+}
+
+/* responsive */
+
+@media (max-width: 640px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .avatar {
+    width: 140px;
+    height: 140px;
+  }
+
+  .icon-row {
+    justify-content: center;
+  }
+
+  .timeline-item {
+    grid-template-columns: 20px 1fr;
+  }
+
+  .timeline-year {
+    grid-column: 1 / -1;
+    padding-top: 0;
+    padding-right: 0;
+  }
+
+  .timeline-dot {
+    display: none;
+  }
+
+  .work-grid {
+    max-width: none;
+  }
+
+  .project-row {
+    grid-template-columns: 72px 1fr;
+    gap: 16px;
+  }
+
+  .project-thumb {
+    width: 72px;
+    height: 72px;
+  }
+
+  .shorts-grid {
+    overflow-x: auto;
+  }
+
+  .entry-images {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+}
