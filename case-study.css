@@ -1,0 +1,670 @@
+/* ===================================================================
+   Case study template — shared across all portfolio case studies.
+   Design tokens derived from konrad-design-system.md
+   =================================================================== */
+
+:root {
+  --cs-text: #0a0a0a;         /* headings, primary text */
+  --cs-body: #4e5a61;         /* paragraph copy — slate grey-blue */
+  --cs-meta: #676a6c;         /* nav, captions, metadata */
+  --cs-muted: #ababab;        /* eyebrow borders, quiet labels */
+  --cs-line: #e5e5e5;         /* hairline dividers */
+  --cs-bg: #ffffff;
+  --cs-slot-bg: #ffffff;      /* empty media-slot fill */
+  --cs-slot-border: #d4d4d2;  /* empty media-slot dashed border */
+  --cs-accent: #bb162c;       /* use sparingly — swap for brand color per project */
+
+  --cs-font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --cs-font-body: "Inter", -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif;
+
+  --cs-measure: 720px;        /* comfortable reading width for paragraphs */
+  --cs-page: 1200px;          /* max width of the page column */
+  --cs-gutter: clamp(14px, 3vw, 38px);  /* symmetrical side margin (-40%) */
+
+  --cs-space-title-body: 56px;  /* section header -> paragraph */
+  --cs-space-body-media: 56px;  /* paragraph -> image asset(s) */
+}
+
+html {
+  overflow-x: hidden;
+}
+
+.cs-page {
+  margin: 0;
+  background: var(--cs-bg);
+  color: var(--cs-body);
+  font-family: var(--cs-font-body);
+  line-height: 1.65;
+  font-size: 16px;
+  max-width: 100vw;
+}
+
+.cs-page * { box-sizing: border-box; }
+
+.cs-page :where(figure, h1, h2, h3, p) {
+  margin: 0;
+}
+
+.cs-container {
+  max-width: var(--cs-page);
+  margin: 0 auto;
+  padding: 0 var(--cs-gutter);
+}
+
+/* ---------- header ---------- */
+
+.cs-header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: transparent;
+}
+
+.cs-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px var(--cs-gutter);
+}
+
+.cs-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--cs-text);
+  text-decoration: none;
+  font-family: var(--cs-font-display);
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.cs-brand:hover { color: var(--cs-accent); }
+
+.cs-brand-mark {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.cs-menu-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: var(--cs-text);
+  font-family: var(--cs-font-body);
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.cs-menu-toggle:hover { color: var(--cs-accent); }
+
+/* ---------- menu panel ---------- */
+
+.cs-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: var(--cs-bg);
+}
+
+.cs-menu[hidden] { display: none; }
+
+.cs-menu-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 22px;
+  padding-top: 72px;
+}
+
+.cs-menu-inner a {
+  font-family: var(--cs-font-display);
+  font-weight: 400;
+  font-size: clamp(28px, 5vw, 44px);
+  color: var(--cs-text);
+  text-decoration: none;
+}
+
+.cs-menu-inner a:hover { color: var(--cs-accent); }
+
+/* ---------- profile photo (About page) ---------- */
+
+.about-avatar {
+  width: 160px;
+  aspect-ratio: 1 / 1;
+  margin: 0 0 28px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.about-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- hero ---------- */
+
+.cs-hero {
+  padding-top: 40px;
+  padding-bottom: 56px;
+}
+
+.cs-eyebrow {
+  display: inline-block;
+  font-family: var(--cs-font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cs-text);
+  background: #f3f3f3;
+  border: 1px solid var(--cs-line);
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin-bottom: 24px;
+}
+
+.cs-title {
+  font-family: var(--cs-font-display);
+  font-weight: 400;
+  font-size: clamp(40px, 6vw, 64px);
+  line-height: 1;
+  color: var(--cs-text);
+  margin: 0 0 28px;
+  text-wrap: balance;
+}
+
+/* role line under the name on the homepage hero */
+.cs-role {
+  font-family: var(--cs-font-display);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.3;
+  color: var(--cs-text);
+  margin: 0 0 20px;
+}
+
+.cs-tagline {
+  font-size: 18px;
+  color: var(--cs-body);
+  margin: 0;
+  max-width: var(--cs-measure);
+}
+
+/* ---------- sections ---------- */
+
+.cs-section {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.cs-section-title {
+  font-family: var(--cs-font-display);
+  font-weight: 400;
+  font-size: clamp(24px, 3vw, 32px);
+  color: var(--cs-text);
+  margin: 0 0 var(--cs-space-title-body);
+}
+
+.cs-section-body {
+  max-width: var(--cs-measure);
+}
+
+/* any image asset following body copy gets the same top gap,
+   whether it's a single media-slot or a media-group */
+.cs-section-body + .media-slot,
+.cs-section-body + .media-group {
+  margin-top: var(--cs-space-body-media);
+}
+
+/* consecutive media blocks (not the first one after body copy)
+   get a smaller default gap between each other */
+.media-slot + .media-slot,
+.media-slot + .media-group,
+.media-group + .media-slot,
+.media-group + .media-group {
+  margin-top: 30px;
+}
+
+.cs-section-body p {
+  margin: 0 0 16px;
+}
+
+.cs-section-body p:last-child { margin-bottom: 0; }
+
+/* ---------- media slots ----------
+   Drop your prepared image at the given `src`. Until the file exists,
+   the slot renders as a labeled placeholder so the backbone stays
+   readable. Group multiple screenshots into one image on your side
+   before attaching — one <img> per slot, not per screenshot. */
+
+.media-slot {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: var(--ar, 16 / 10);
+  background: var(--cs-slot-bg);
+  overflow: hidden;
+}
+
+.media-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.media-slot figcaption {
+  display: none;
+}
+
+.media-slot.is-empty {
+  border: 1px dashed var(--cs-slot-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* direct child only: a dark-grid card's image must never be hidden because a
+   neighbouring card's image is missing (the grid shares one outer figure) */
+.media-slot.is-empty > img { display: none; }
+
+.media-slot.is-empty figcaption {
+  display: block;
+  color: var(--cs-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 16px;
+}
+
+/* dark variant: black fill instead of the default light placeholder */
+
+.media-slot--dark {
+  background: #000;
+}
+
+.media-slot--dark.is-empty {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.media-slot--dark.is-empty figcaption {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* swaps the flat black fill for a photo, used behind the Stakeholders card */
+.media-slot--photo-bg {
+  background: var(--bg) center / cover no-repeat;
+}
+
+/* three phone screens centered inside a .media-slot--dark */
+
+.phone-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  height: 100%;
+  width: 100%;
+  padding: 24px;
+}
+
+/* the phones sit side-by-side in a row, not stacked — override the
+   generic "consecutive media blocks" vertical-gap rule for this context */
+.phone-row .media-slot + .media-slot {
+  margin-top: 0;
+}
+
+.media-slot--phone {
+  width: 28.8%;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 9 / 16;
+  flex: 0 0 auto;
+  border-radius: 20px;
+  border: 6px solid #3a3a3a;
+}
+
+/* left phone: zoom the screenshot out 20% so more of the frame is visible */
+/* left phone's source image is narrower than the standard 9:16 frame —
+   shrink its width to match the image's own ratio instead of letterboxing */
+.phone-row .media-slot--phone {
+  width: 25.5%;
+  aspect-ratio: 720 / 1446;
+}
+
+.phone-row .media-slot--phone img {
+  object-fit: cover;
+}
+
+.phone-row--platform .media-slot--phone img {
+  object-fit: contain;
+}
+
+.phone-row--solution .media-slot--phone img {
+  transform: scale(0.98);
+}
+
+/* Two-frame solution row: the left frame spans the removed middle slot.
+   Its height is NOT derived from its width (a width/aspect-ratio pairing
+   can only match the sibling at one viewport size). Instead the row sizes
+   to its content and stretches every frame to the tallest one, so the wide
+   frame is exactly the small frame's height at any width. */
+.phone-row--solution-wide-left {
+  height: auto;
+  align-items: stretch;
+}
+
+/* Each frame takes its own image's exact ratio. box-sizing: content-box makes
+   aspect-ratio govern the content box (the box the image fills) rather than
+   the border box, so the 6px border can't leave a letterbox strip. The frames
+   share the row via flex-grow weights in the ratio of the two image widths at
+   equal height (wide : small = (1714/1018) : (630/1280)), so their heights are
+   equal at any viewport and they fill the row with no slack. The gap and
+   borders are subtracted before the space is divided, so nothing overflows. */
+.phone-row--solution-wide-left .media-slot--phone {
+  box-sizing: content-box;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.phone-row--solution-wide-left .media-slot--phone:first-child {
+  flex-grow: calc((1714 / 1018) / (630 / 1280));
+  aspect-ratio: 1714 / 1018;
+}
+
+.phone-row--solution-wide-left .media-slot--phone:nth-child(2) {
+  flex-grow: 1;
+  aspect-ratio: 630 / 1280;
+}
+
+.phone-row--solution-wide-left .media-slot--phone img {
+  object-fit: contain;
+}
+
+/* Appointment Platform — every frame is the same height; width follows each
+   image's own ratio. Sizing from height (not width %) is what keeps them equal. */
+.phone-row--platform .media-slot--phone {
+  height: 100%;
+  width: auto;
+  border-radius: 20px;
+}
+
+.phone-row--platform .media-slot--phone:first-child {
+  aspect-ratio: 1306 / 1022;
+}
+
+.phone-row--platform .media-slot--phone:nth-child(2) {
+  aspect-ratio: 690 / 1258;
+}
+
+.phone-row--platform .media-slot--phone:nth-child(3) {
+  aspect-ratio: 658 / 1252;
+}
+
+
+.phone-row .media-slot--phone:first-child img {
+  transform: scale(0.87);
+}
+
+.phone-row .media-slot--phone:nth-child(3) img {
+  transform: scale(0.87);
+}
+
+.phone-row--solution .media-slot--phone:nth-child(3) img {
+  transform: scale(0.97);
+}
+
+/* Opportunity row: left phone zoomed in 7%, right phone zoomed out 7%, over the shared 0.87 */
+.phone-row--opportunity .media-slot--phone:first-child img {
+  transform: scale(0.93);
+}
+
+.phone-row--opportunity .media-slot--phone:nth-child(3) img {
+  transform: scale(0.95);
+}
+
+/* platform frames already match their images exactly — no zoom correction */
+.phone-row--platform .media-slot--phone:first-child img,
+.phone-row--platform .media-slot--phone:nth-child(2) img,
+.phone-row--platform .media-slot--phone:nth-child(3) img {
+  transform: none;
+}
+
+/* Single-frame platform row (Tumi CRM). The frame takes the image's exact
+   ratio on its content box (content-box sizing, so the 6px border can't
+   leave a strip), and its height is the row minus the border so the border
+   box lands exactly inside the row instead of 6px into the padding. */
+.phone-row--platform-single .media-slot--phone:first-child {
+  box-sizing: content-box;
+  height: calc(100% - 12px);
+  aspect-ratio: 1576 / 974;
+}
+
+/* dark grid: grey label cards laid out on a .media-slot--dark
+   (full / wide + narrow / full). Container height follows content. */
+
+.dark-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  padding: 24px;
+}
+
+/* border matches .media-slot--phone (Appointment Platform frames) exactly */
+.dark-card {
+  grid-column: span 12;
+  background: #fff;
+  border: 6px solid #3a3a3a;
+  border-radius: 20px;
+  padding: 14px 12px 12px;
+}
+
+/* only image-less scaffold cards get a placeholder height; a card with an
+   image must size purely from the image so nothing can inflate the box */
+.dark-card:not(:has(img)) {
+  min-height: 240px;
+}
+
+.dark-card--wide   { grid-column: span 8; }
+.dark-card--narrow { grid-column: span 4; }
+
+/* matches .cs-section-title so card labels read like section headers */
+.dark-card-label {
+  font-family: var(--cs-font-display);
+  font-weight: 400;
+  font-size: clamp(24px, 3vw, 32px);
+  color: #000;
+  margin: 0;
+}
+
+/* card image sits below the label; the card grows to fit it.
+   object-fit must be overridden here — the generic .media-slot img rule
+   leaks `cover` into this card and would crop the picture's sides. */
+.dark-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-top: 16px;
+  border-radius: 10px;
+}
+
+/* two images side by side inside a card, left 45% / right 55% */
+.dark-card-pair {
+  display: grid;
+  grid-template-columns: 45fr 55fr;
+  gap: 16px;
+  align-items: start;
+  margin-top: 16px;
+}
+
+.dark-card-pair img {
+  margin-top: 0;
+}
+
+/* one-sentence caption under a card label; the image below keeps its 16px gap */
+.dark-card-caption {
+  font-family: var(--cs-font-body);
+  font-size: 15px;
+  line-height: 1.5;
+  color: #000;
+  max-width: var(--cs-measure);
+  margin: 6px 0 0;
+}
+
+/* in a loose card, a caption that follows an image gets double spacing */
+.dark-card--loose img + .dark-card-caption {
+  margin-top: 32px;
+}
+
+/* full-bleed variant for hero-scale imagery */
+
+.media-slot--bleed { --ar: 21 / 10; }
+
+/* shifts the visible crop down 10% from center (TUMI hero) */
+.media-slot--hero-shift img { object-position: 50% 30%; }
+
+/* groups: side-by-side media-slots */
+
+.media-group {
+  display: grid;
+  gap: 30px;
+  margin-top: 0;
+}
+
+.media-group--2 { grid-template-columns: 1fr 1fr; }
+.media-group--3 { grid-template-columns: repeat(3, 1fr); }
+.media-group--asym { grid-template-columns: 1.3fr 1fr; }
+
+/* ---------- work list (main page) ---------- */
+
+.work-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.work-item {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.work-item-text {
+  margin-top: 16px;
+}
+
+.work-item-text h3 {
+  font-family: var(--cs-font-display);
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--cs-text);
+  margin: 0 0 6px;
+}
+
+.work-item-text p {
+  color: var(--cs-body);
+  margin: 0;
+}
+
+.work-item:hover .work-item-text h3 { color: var(--cs-accent); }
+
+@media (max-width: 640px) {
+  .work-list { grid-template-columns: 1fr; }
+}
+
+/* ---------- bento (My Duties) ---------- */
+
+.cs-bento {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.cs-bento-card {
+  grid-column: span 12;
+  background: var(--cs-slot-bg);
+  border: 1px solid var(--cs-line);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.cs-bento-card--half { grid-column: span 6; }
+.cs-bento-card--wide { grid-column: span 8; }
+.cs-bento-card--third { grid-column: span 4; }
+
+.cs-bento-label {
+  font-family: var(--cs-font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cs-meta);
+  margin: 0 0 14px;
+}
+
+.cs-bento-card .media-group,
+.cs-bento-card .media-slot { margin-top: 0; }
+
+.cs-bento-card .media-slot + .cs-bento-caption,
+.cs-bento-card .media-group + .cs-bento-caption {
+  margin-top: 14px;
+}
+
+.cs-bento-caption {
+  font-size: 14px;
+  color: var(--cs-body);
+  margin: 0;
+}
+
+/* ---------- footer ---------- */
+
+.cs-footer {
+  border-top: 1px solid var(--cs-line);
+  padding-top: 40px;
+  padding-bottom: 64px;
+  margin-top: 40px;
+}
+
+.cs-footer a {
+  color: var(--cs-text);
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cs-footer a:hover { color: var(--cs-accent); }
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 720px) {
+  .media-group--2,
+  .media-group--3,
+  .media-group--asym {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-bento-card,
+  .cs-bento-card--half,
+  .cs-bento-card--wide,
+  .cs-bento-card--third,
+  .dark-card--wide,
+  .dark-card--narrow {
+    grid-column: span 12;
+  }
+
+  .cs-section { padding-top: 44px; padding-bottom: 44px; }
+}
