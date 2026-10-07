@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyberfight — Case Study</title>
+<meta name="description" content="A gamified LINE stamp rally campaign built to secure sponsorship revenue for Cyberfight.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="case-study.css?v=12">
+</head>
+<body class="cs-page">
+
+<header class="cs-header">
+  <div class="cs-header-inner cs-container">
+    <a class="cs-brand" href="index.html" aria-label="Koki Yamanaka — home">
+      <svg class="cs-brand-mark" viewBox="0 0 28 28" aria-hidden="true">
+        <path d="M4 24 24 4M4 4h14M4 4v14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square"/>
+      </svg>
+      <span>Koki Yamanaka</span>
+    </a>
+    <button class="cs-menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="siteMenu">
+      <span class="cs-menu-toggle-label">Menu</span>
+    </button>
+  </div>
+</header>
+
+<nav class="cs-menu" id="siteMenu" hidden>
+  <div class="cs-menu-inner cs-container">
+    <a href="index.html">Portfolio</a>
+    <a href="about.html">Profile</a>
+    <a href="index.html#work">Case Studies</a>
+    <a href="https://www.linkedin.com/in/koki-yamanaka-48b186243" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ========== HERO ========== -->
+  <header class="cs-container cs-hero">
+    <span class="cs-eyebrow">Case Study</span>
+    <h1 class="cs-title">Cyberfight</h1>
+    <p class="cs-tagline">Gamified Campaign</p>
+  </header>
+
+  <figure class="media-slot media-slot--bleed" style="--ar: 21/9;">
+    <img src="images/cyberfight/hero.png" alt="Cyberfight wrestling event">
+    <figcaption>Hero — Cyberfight event</figcaption>
+  </figure>
+
+  <!-- ========== THE OPPORTUNITY ========== -->
+  <section class="cs-section cs-container">
+    <h2 class="cs-section-title">The Opportunity</h2>
+    <div class="cs-section-body">
+      <p>Before Cyberfight holds a major wrestling event, it needs to secure high-value sponsorship revenue. We partnered with the Cyberfight team to build an O2O gamified marketing campaign to secure sponsorship.</p>
+    </div>
+
+    <figure class="media-slot" style="--ar: 21/9;">
+      <img src="images/cyberfight/opportunity.webp" alt="Cyberfight wrestling event">
+      <figcaption>Cyberfight event</figcaption>
+    </figure>
+  </section>
+
+  <!-- ========== THE SOLUTION ========== -->
+  <section class="cs-section cs-container">
+    <h2 class="cs-section-title">The Solution</h2>
+    <div class="cs-section-body">
+      <p>To secure a high-value sponsorship, we built a digital stamp rally within the LINE app. Each user subscribed to Cyberfight's LINE account who completes all missions (e.g., visits a restaurant) receives an official digital wallpaper of a wrestler.</p>
+      <p>The result: 350+ users completed missions, satisfying the sponsorship requirements.</p>
+    </div>
+
+    <figure class="media-slot media-slot--dark" style="--ar: 16/9;">
+      <div class="phone-row phone-row--solution phone-row--uniform">
+        <figure class="media-slot media-slot--phone">
+          <img src="images/cyberfight/phone-3.jpg" alt="NOAH stamp card screen showing collected stamps">
+          <figcaption>Stamp card</figcaption>
+        </figure>
+        <figure class="media-slot media-slot--phone">
+          <img src="images/cyberfight/phone-2.jpg" alt="Mission list screen with completed missions">
+          <figcaption>Mission list</figcaption>
+        </figure>
+        <figure class="media-slot media-slot--phone">
+          <img src="images/cyberfight/phone-1.jpg" alt="Reward screen offering an official digital wallpaper">
+          <figcaption>Wallpaper reward</figcaption>
+        </figure>
+      </div>
+    </figure>
+  </section>
+
+  <!-- ========== MY DUTIES ========== -->
+  <section class="cs-section cs-container">
+    <h2 class="cs-section-title">My Duties</h2>
+
+    <div class="cs-section-body">
+      <p>As Project Manager, I was responsible for three things:</p>
+      <ol>
+        <li>Communicate with the client from requirements to post-release.</li>
+        <li>Build and test the campaign system end to end with an internal no-code system.</li>
+        <li>Design the UI/UX with an existing template in Figma.</li>
+      </ol>
+    </div>
+  </section>
+
+  <footer class="cs-footer cs-container">
+    <a href="index.html">&larr; Back to portfolio</a>
+  </footer>
+
+</main>
+
+<script>
+  document.querySelectorAll('.media-slot > img').forEach(function (img) {
+    var markEmpty = function () { img.closest('.media-slot').classList.add('is-empty'); };
+    if (img.complete && img.naturalWidth === 0) {
+      markEmpty();
+    } else {
+      img.addEventListener('error', markEmpty);
+    }
+  });
+
+  (function () {
+    var toggle = document.getElementById('menuToggle');
+    var menu = document.getElementById('siteMenu');
+    var label = toggle.querySelector('.cs-menu-toggle-label');
+
+    toggle.addEventListener('click', function () {
+      var willOpen = menu.hidden;
+      menu.hidden = !willOpen;
+      toggle.setAttribute('aria-expanded', String(willOpen));
+      label.textContent = willOpen ? 'Close' : 'Menu';
+    });
+  })();
+</script>
+
+</body>
+</html>

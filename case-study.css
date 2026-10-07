@@ -708,3 +708,72 @@ html {
 
   .cs-section { padding-top: 44px; padding-bottom: 44px; }
 }
+
+/* ---------- about: experience + skill cards ---------- */
+
+.exp-list { display: grid; gap: 56px; max-width: var(--cs-measure); }
+
+.exp-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.exp-head h3 {
+  font-family: var(--cs-font-display);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--cs-text);
+}
+
+.exp-dates { font-size: 14px; color: var(--cs-meta); white-space: nowrap; }
+
+.exp-item p { margin: 0; }
+.exp-item ul:not(.skill-list) { margin: 0; padding-left: 20px; }
+.exp-item li + li { margin-top: 8px; }
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+}
+
+.exp-item .skill-list li + li { margin-top: 0; }
+
+.skill-card {
+  padding: 6px 16px;
+  border: 1px solid var(--cs-line);
+  border-radius: 40%;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--cs-text);
+  background: #fafafa;
+}
+
+@media (max-width: 720px) {
+  .exp-head { flex-direction: column; gap: 2px; }
+}
+
+/* Uniform phone row — every frame uses the screenshots' own 1220:2712 ratio,
+   so all three are the same size and the image fills the frame exactly.
+   content-box lets aspect-ratio govern the image area (no letterbox from the
+   border). */
+.phone-row--uniform .media-slot--phone {
+  box-sizing: content-box;
+  width: 22%;
+  aspect-ratio: 1220 / 2712;
+}
+
+.phone-row.phone-row--uniform .media-slot--phone img,
+.phone-row.phone-row--uniform .media-slot--phone:first-child img,
+.phone-row.phone-row--uniform .media-slot--phone:nth-child(3) img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: none;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile — Koki Yamanaka</title>
+<meta name="description" content="Machine learning engineer. I build AI products that actually get used.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="case-study.css?v=11">
+</head>
+<body class="cs-page">
+
+<header class="cs-header">
+  <div class="cs-header-inner cs-container">
+    <a class="cs-brand" href="index.html" aria-label="Koki Yamanaka — home">
+      <svg class="cs-brand-mark" viewBox="0 0 28 28" aria-hidden="true">
+        <path d="M4 24 24 4M4 4h14M4 4v14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square"/>
+      </svg>
+      <span>Koki Yamanaka</span>
+    </a>
+    <button class="cs-menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="siteMenu">
+      <span class="cs-menu-toggle-label">Menu</span>
+    </button>
+  </div>
+</header>
+
+<nav class="cs-menu" id="siteMenu" hidden>
+  <div class="cs-menu-inner cs-container">
+    <a href="index.html">Portfolio</a>
+    <a href="about.html">Profile</a>
+    <a href="https://www.linkedin.com/in/koki-yamanaka-48b186243" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</nav>
+
+<main>
+
+  <section class="cs-container cs-hero">
+    <h1 class="cs-title">Profile</h1>
+  </section>
+
+  <section class="cs-section cs-container">
+    <h2 class="cs-section-title">About</h2>
+    <div class="cs-section-body">
+      <p>I'm Kouki, a project manager who delivers digital products for consumer brands. At a LINE marketing tech venture, I managed delivery for luxury brands (Dior, Tumi, Hilton) in parallel, coordinating 5-6 stakeholders (client, sales, engineers) per project. My work included a pop-up reservation system, a custom CRM, and a gamified campaign.</p>
+      <p>I'm also a software engineer who builds automation specialized in marketing operations. For example, I built a pipeline that normalizes monthly revenue and advertising data from multiple e-commerce platforms for an e-commerce retailer.</p>
+      <p>In my spare time, I edit short-form videos, aiming for high views and conversions in Instagram.</p>
+    </div>
+  </section>
+
+  <section class="cs-section cs-container">
+    <h2 class="cs-section-title">Experience</h2>
+    <div class="exp-list">
+    <article class="exp-item">
+      <header class="exp-head">
+        <h3>Freelancer</h3>
+      </header>
+      <ul><li><strong>Lecturer:</strong> Teach three 3-hour courses (AI Agents, Machine Learning, Web Development) to enterprises and technical schools.</li><li><strong>Data engineering:</strong> Built a pipeline that normalizes monthly revenue and ad metrics from multiple e-commerce platforms for an advertising team.</li></ul>
+      <ul class="skill-list" aria-label="Skills"><li class="skill-card">AWS (core compute &amp; storage)</li><li class="skill-card">CI/CD</li><li class="skill-card">Node.js</li><li class="skill-card">React</li><li class="skill-card">TypeScript</li><li class="skill-card">SQL</li></ul>
+    </article>
+
+    <article class="exp-item">
+      <header class="exp-head">
+        <h3>Project Manager · Evolany (LINE Marketing Tech Venture)</h3>
+      </header>
+      <p>Managed delivery of digital products for luxury brands (Dior, Tumi, Hilton), coordinating 5-6 stakeholders (client, sales, engineers) per project. Products included a pop-up reservation system, a custom CRM, and a gamified campaign.</p>
+      <ul class="skill-list" aria-label="Skills"><li class="skill-card">GA4</li><li class="skill-card">Salesforce</li><li class="skill-card">Trello</li><li class="skill-card">LINE Mini App</li><li class="skill-card">Figma</li></ul>
+    </article>
+
+    <article class="exp-item">
+      <header class="exp-head">
+        <h3>Software Engineer · Novatrade (Software Consultancy)</h3>
+      </header>
+      <p>Managed and built a Python/React web app that auto-generates quotations for electrical construction supplies, from proof of concept through maintenance.</p>
+      <ul class="skill-list" aria-label="Skills"><li class="skill-card">AWS (infrastructure &amp; security)</li><li class="skill-card">CI/CD</li><li class="skill-card">Python</li><li class="skill-card">React</li><li class="skill-card">TypeScript</li><li class="skill-card">SQL</li><li class="skill-card">Project Management</li></ul>
+    </article>
+
+    <article class="exp-item">
+      <header class="exp-head">
+        <h3>Data Scientist · Tebiki (SaaS Startup)</h3>
+      </header>
+      <p>Deployed models and tools to support marketing and sales operations.</p>
+      <ul class="skill-list" aria-label="Skills"><li class="skill-card">HubSpot</li><li class="skill-card">React</li><li class="skill-card">Python</li><li class="skill-card">AWS</li><li class="skill-card">RAG</li><li class="skill-card">Databricks</li><li class="skill-card">SQL</li></ul>
+    </article>
+    </div>
+  </section>
+
+  <footer class="cs-footer cs-container">
+    <a href="https://www.linkedin.com/in/koki-yamanaka-48b186243" target="_blank" rel="noopener">LinkedIn</a>
+  </footer>
+
+</main>
+
+<script>
+  document.querySelectorAll('.media-slot > img').forEach(function (img) {
+    var markEmpty = function () { img.closest('.media-slot').classList.add('is-empty'); };
+    if (img.complete && img.naturalWidth === 0) {
+      markEmpty();
+    } else {
+      img.addEventListener('error', markEmpty);
+    }
+  });
+
+  (function () {
+    var toggle = document.getElementById('menuToggle');
+    var menu = document.getElementById('siteMenu');
+    var label = toggle.querySelector('.cs-menu-toggle-label');
+
+    toggle.addEventListener('click', function () {
+      var willOpen = menu.hidden;
+      menu.hidden = !willOpen;
+      toggle.setAttribute('aria-expanded', String(willOpen));
+      label.textContent = willOpen ? 'Close' : 'Menu';
+    });
+  })();
+</script>
+
+</body>
+</html>
