@@ -777,3 +777,18 @@ html {
   object-fit: cover;
   transform: none;
 }
+
+/* second and later work groups (e.g. Marketing) sit clear of the list above */
+.work-list + .work-group-label {
+  margin-top: 96px;
+}
+
+/* zoomed-out card image: show the whole picture instead of cropping it */
+.media-slot--fit {
+  background: #fff; /* blends with the white artwork background */
+}
+
+.media-slot--fit > img {
+  object-fit: contain;
+  transform: scale(0.8); /* zoom out 20% */
+}

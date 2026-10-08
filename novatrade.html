@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Novatrade — Case Study</title>
+<meta name="description" content="Novatrade case study: awareness and traffic generation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="case-study.css?v=16">
+</head>
+<body class="cs-page">
+
+<header class="cs-header">
+  <div class="cs-header-inner cs-container">
+    <a class="cs-brand" href="index.html" aria-label="Koki Yamanaka — home">
+      <svg class="cs-brand-mark" viewBox="0 0 28 28" aria-hidden="true">
+        <path d="M4 24 24 4M4 4h14M4 4v14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square"/>
+      </svg>
+      <span>Koki Yamanaka</span>
+    </a>
+    <button class="cs-menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="siteMenu">
+      <span class="cs-menu-toggle-label">Menu</span>
+    </button>
+  </div>
+</header>
+
+<nav class="cs-menu" id="siteMenu" hidden>
+  <div class="cs-menu-inner cs-container">
+    <a href="index.html">Portfolio</a>
+    <a href="about.html">Profile</a>
+    <a href="index.html#work">Case Studies</a>
+    <a href="https://www.linkedin.com/in/koki-yamanaka-48b186243" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ========== HERO ========== -->
+  <header class="cs-container cs-hero">
+    <span class="cs-eyebrow">Case Study</span>
+    <h1 class="cs-title">Novatrade</h1>
+    <p class="cs-tagline">Awareness and Traffic Generation</p>
+  </header>
+
+  <figure class="media-slot media-slot--bleed media-slot--fit" style="--ar: 21/9;">
+    <img src="images/novatrade/hero-2.jpg" alt="Novatrade Tech Hub">
+    <figcaption>Hero — Novatrade</figcaption>
+  </figure>
+
+  <!-- ========== OPPORTUNITY ========== -->
+  <section class="cs-section cs-container">
+    <h2 class="cs-section-title">The Opportunity</h2>
+    <div class="cs-section-body">
+      <p>Novatrade aims to sell its existing technical courses to consumers and needed a marketing channel to build awareness. I partnered with the team to build an Instagram channel that drives viewers to the courses.</p>
+    </div>
+
+
+    <figure class="media-slot" style="--ar: 1572/728;">
+      <img src="images/novatrade/opportunity.png" alt="Novatrade course sales">
+      <figcaption>Novatrade</figcaption>
+    </figure>
+
+
+  </section>
+
+  <!-- ========== SOLUTION ========== -->
+  <section class="cs-section cs-container">
+    <h2 class="cs-section-title">The Solution</h2>
+    <div class="cs-section-body">
+      <p>We produced high-retention short-form videos that teach startup tactics from notable founders' stories to business owners and engineers.</p>
+    </div>
+
+
+    <figure class="media-slot media-slot--dark" style="--ar: 16/9;">
+      <div class="phone-row phone-row--solution phone-row--uniform">
+        <figure class="media-slot media-slot--phone">
+          <img src="images/novatrade/solution-1.jpg" alt="Novatrade Instagram reel — screen 1">
+          <figcaption>Reel 1</figcaption>
+        </figure>
+        <figure class="media-slot media-slot--phone">
+          <img src="images/novatrade/solution-2.jpg" alt="Novatrade Instagram reel — screen 2">
+          <figcaption>Reel 2</figcaption>
+        </figure>
+        <figure class="media-slot media-slot--phone">
+          <img src="images/novatrade/solution-3.jpg" alt="Novatrade Instagram reel — screen 3">
+          <figcaption>Reel 3</figcaption>
+        </figure>
+      </div>
+    </figure>
+
+  </section>
+
+  <!-- ========== RESULT ========== -->
+  <section class="cs-section cs-container">
+    <h2 class="cs-section-title">The Result</h2>
+    <div class="cs-section-body">
+      <ul>
+        <li>5 consecutive reels reached 2-3.6k views, with one breakout reel hitting 19.6k views (2% save rate, 32% follow rate).</li>
+        <li>Weekly CTR from reels to the bio page rose from 1% to 2.5% over 4 weeks.</li>
+      </ul>
+    </div>
+
+
+    <figure class="media-slot media-slot--dark" style="--ar: 16/9;">
+      <div class="phone-row phone-row--solution phone-row--uniform">
+        <figure class="media-slot media-slot--phone">
+          <img src="images/novatrade/result-4.jpg" alt="Novatrade Instagram reel — screen 4">
+          <figcaption>Reel 4</figcaption>
+        </figure>
+        <figure class="media-slot media-slot--phone">
+          <img src="images/novatrade/result-5.jpg" alt="Novatrade Instagram reel — screen 5">
+          <figcaption>Reel 5</figcaption>
+        </figure>
+        <figure class="media-slot media-slot--phone">
+          <img src="images/novatrade/result-6.jpg" alt="Novatrade Instagram reel — screen 6">
+          <figcaption>Reel 6</figcaption>
+        </figure>
+      </div>
+    </figure>
+
+  </section>
+
+  <footer class="cs-footer cs-container">
+    <a href="index.html">&larr; Back to portfolio</a>
+  </footer>
+
+</main>
+
+<script>
+  document.querySelectorAll('.media-slot > img').forEach(function (img) {
+    var markEmpty = function () { img.closest('.media-slot').classList.add('is-empty'); };
+    if (img.complete && img.naturalWidth === 0) {
+      markEmpty();
+    } else {
+      img.addEventListener('error', markEmpty);
+    }
+  });
+
+  (function () {
+    var toggle = document.getElementById('menuToggle');
+    var menu = document.getElementById('siteMenu');
+    var label = toggle.querySelector('.cs-menu-toggle-label');
+
+    toggle.addEventListener('click', function () {
+      var willOpen = menu.hidden;
+      menu.hidden = !willOpen;
+      toggle.setAttribute('aria-expanded', String(willOpen));
+      label.textContent = willOpen ? 'Close' : 'Menu';
+    });
+  })();
+</script>
+
+</body>
+</html>
