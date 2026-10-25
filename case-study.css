@@ -914,4 +914,6 @@ html {
   color: var(--cs-muted);
   white-space: nowrap;
 }
+/* LINE jpg has an off-white background: lift it to pure white so no box shows */
+.logo-slot img[src$=".jpg"] { filter: grayscale(1) brightness(1.06) contrast(1.4); opacity: 1; }
 .logo-slot img { height: 100%; width: auto; max-width: 100%; object-fit: contain; filter: grayscale(1); mix-blend-mode: multiply; opacity: .75; }
