@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="case-study.css?v=38">
+<link rel="stylesheet" href="case-study.css?v=67">
 </head>
 <body class="cs-page">
 
@@ -49,6 +49,7 @@
   <!-- ========== WORKED WITH ========== -->
   <section class="worked-with" aria-label="Clients I have worked with">
    <div class="cs-container">
+    <p class="worked-with-label">Worked with</p>
     <ul class="logo-strip">
       <li class="logo-slot">
         <img src="images/clients/line.png" alt="LINE" hidden>
@@ -80,9 +81,9 @@
 
   <!-- ========== WORK LIST ========== -->
   <section class="cs-section cs-container" id="work">
-    <h2 class="cs-section-title">Work</h2>
-    <div class="cs-section-body">
-      <p>Project Management</p>
+    <h2 class="cs-section-title">Past Work</h2>
+    <div class="cs-section-body work-group-label">
+      <p>01 Project Management</p>
     </div>
 
     <div class="work-list">
@@ -135,43 +136,66 @@
 
     </div>
 
+    <!-- one row; each card carries its own group label -->
+    <div class="work-list work-list--labeled">
+
+      <div class="work-col">
+        <div class="cs-section-body work-group-label">
+          <p>02 Marketing</p>
+        </div>
+        <a class="work-item" href="novatrade.html">
+          <figure class="media-slot media-slot--fit" style="--ar: 16/10;">
+            <img src="images/novatrade/hero-2.jpg" alt="Novatrade">
+            <figcaption>Novatrade</figcaption>
+          </figure>
+          <div class="work-item-text">
+            <h3>IT Consultancy Firm</h3>
+            <p>Create content for awareness</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="work-col" id="education">
+        <div class="cs-section-body work-group-label">
+          <p>03 Education</p>
+        </div>
+        <a class="work-item" href="technical-school.html">
+          <figure class="media-slot" style="--ar: 16/10;">
+            <img src="images/technical-school/fundamentals-card.png" alt="AI &amp; Software Fundamentals">
+            <figcaption>Technical School</figcaption>
+          </figure>
+          <div class="work-item-text">
+            <h3>Technical School</h3>
+            <p>Lecturing for IT Technicals</p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== IDEAS ========== -->
+  <section class="cs-section cs-container" id="ideas">
+    <h2 class="cs-section-title">Ideas</h2>
+
     <div class="cs-section-body work-group-label">
-      <p>Content-Based Marketing</p>
+      <p>01 Instagram Account Management</p>
     </div>
 
     <div class="work-list">
 
-      <a class="work-item" href="novatrade.html">
-        <figure class="media-slot media-slot--fit" style="--ar: 16/10;">
-          <img src="images/novatrade/hero-2.jpg" alt="Novatrade">
-          <figcaption>Novatrade</figcaption>
-        </figure>
-        <div class="work-item-text">
-          <h3>Novatrade: IT Consultancy Firm</h3>
-          <p>Awareness and Traffic Generation</p>
-        </div>
-      </a>
-
-      <!-- TODO: add marketing projects here -->
-
-    </div>
-
-    <div class="cs-section-body work-group-label" id="education">
-      <p>Education</p>
-    </div>
-
-    <div class="work-list">
-
-      <a class="work-item" href="technical-school.html">
+      <a class="work-item" href="pect.html">
         <figure class="media-slot" style="--ar: 16/10;">
-          <img src="images/technical-school/hero.jpeg" alt="Technical school lecture">
-          <figcaption>Technical School</figcaption>
+          <img src="images/pect/hero.jpg" alt="How to grow your Instagram without luck">
+          <figcaption>PECT Framework</figcaption>
         </figure>
         <div class="work-item-text">
-          <h3>Technical School</h3>
-          <p>Lecturing for IT Technicals</p>
+          <h3>PECT Framework</h3>
+          <p>Grow any Instagram account with consistency</p>
         </div>
       </a>
+
+      <!-- TODO: add more ideas here -->
 
     </div>
   </section>

@@ -230,6 +230,66 @@ html {
   margin: 0 0 var(--cs-space-title-body);
 }
 
+/* homepage group labels (h2 level, under the 35px "Past Work" h1) */
+#work .work-group-label p,
+#ideas .work-group-label p {
+  font-family: var(--cs-font-display);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--cs-text);
+  margin: 0;
+}
+
+/* row where every card has its own group label above it */
+.work-col {
+  flex: 0 0 calc((100% - 60px) / 4 * 0.75);
+  min-width: 0;
+}
+.work-col .work-item { flex: none; width: 100%; }
+.work-col .work-group-label { margin-bottom: 32px; min-height: 2.4em; }
+.work-list--labeled { margin-top: 48px; }
+@media (max-width: 900px) {
+  .work-col { flex-basis: calc((100% - 20px) / 2.4 * 0.75); }
+}
+
+/* Ideas section body copy */
+#ideas .work-group-label { margin-top: 32px; }
+.idea-body { margin-top: 20px; }
+.idea-body p { margin: 0 0 16px; }
+.idea-body ul { margin: 0; padding-left: 20px; }
+.idea-body li + li { margin-top: 12px; }
+.idea-body strong { color: var(--cs-text); font-weight: 600; }
+
+/* show the whole picture (no crop) on a dark card */
+.media-slot.media-slot--contain > img { object-fit: contain; }
+
+/* PECT page: portrait (9:16) hero kept whole, not cropped */
+.pect-hero { max-width: 420px; }
+
+/* phones: wider cards and smaller card text so titles don't collide */
+@media (max-width: 560px) {
+  .work-item,
+  .work-col { flex-basis: 44%; }
+  #work .work-group-label p,
+  #ideas .work-group-label p { font-size: 18px; }
+  .work-item .work-item-text h3 { font-size: 17px; overflow-wrap: anywhere; }
+  .work-item .work-item-text p { font-size: 14px; }
+}
+
+/* homepage: divider line before the Ideas section */
+#ideas { border-top: 1px solid var(--cs-line); }
+
+/* homepage: no divider line above the footer */
+#ideas + .cs-footer { border-top: 0; }
+
+/* homepage "Work" heading */
+#work .cs-section-title,
+#ideas .cs-section-title {
+  font-size: 35px;
+  font-weight: 700;
+}
+
 .cs-section-body {
   max-width: var(--cs-measure);
 }
@@ -792,7 +852,12 @@ html {
 
 /* second and later work groups (e.g. Marketing) sit clear of the list above */
 .work-list + .work-group-label {
-  margin-top: 96px;
+  margin-top: 48px;
+}
+
+/* spacing under each row of cards, before the next group (no divider line) */
+#work .work-list:not(:last-child) {
+  padding-bottom: 48px;
 }
 
 /* zoomed-out card image: show the whole picture instead of cropping it */
@@ -838,8 +903,14 @@ html {
 /* ---- "I worked with" logo strip ---- */
 .worked-with {
   background: var(--cs-bg);
-  border-top: 1px solid var(--cs-line);
   padding: 40px 0;
+}
+.worked-with-label {
+  margin: 0 0 20px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  color: var(--cs-meta);
 }
 .logo-strip {
   list-style: none;
@@ -872,9 +943,9 @@ html {
 @media (max-width: 560px) {
   .home-hero { gap: 14px; padding-top: 40px; padding-bottom: 40px; }
   .home-hero-photo { width: 30vw; border-radius: 10px; }
-  .home-hero-role { margin-bottom: 18px; letter-spacing: .1em; }
-  .home-hero-name { font-size: 11.5vw; margin-bottom: 24px; }
-  .home-hero-tagline { font-size: clamp(14px, 4vw, 17px); }
+  .home-hero .home-hero-role { margin-bottom: 18px; letter-spacing: .1em; }
+  .home-hero .home-hero-name { font-size: min(11.5vw, 48px); margin-bottom: 24px; }
+  .home-hero .home-hero-tagline { font-size: clamp(14px, 4vw, 17px); }
 }
 .home-hero-role {
   margin: 0 0 28px;
