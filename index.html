@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="case-study.css?v=16">
+<link rel="stylesheet" href="case-study.css?v=31">
 </head>
 <body class="cs-page">
 
@@ -37,10 +37,42 @@
 <main>
 
   <!-- ========== HERO ========== -->
-  <section class="cs-container cs-hero">
-    <h1 class="cs-title">Koki Yamanaka</h1>
-    <h4 class="cs-role">Client Project Manager + Software Engineer</h4>
-    <p class="cs-tagline">I manage and build digital marketing products for enterprises.</p>
+  <section class="cs-container cs-hero home-hero">
+    <p class="home-hero-role">Client Project Manager</p>
+    <h1 class="home-hero-name">Koki<br>Yamanaka</h1>
+    <p class="home-hero-tagline">I <strong>manage</strong> and <strong>build</strong><br>digital marketing products<br>for enterprises.</p>
+  </section>
+
+  <!-- ========== WORKED WITH ========== -->
+  <section class="worked-with" aria-label="Clients I have worked with">
+   <div class="cs-container">
+    <ul class="logo-strip">
+      <li class="logo-slot">
+        <img src="images/clients/line.webp" alt="LINE" hidden>
+        <span>LINE</span>
+      </li>
+      <li class="logo-slot">
+        <img src="images/clients/dior.png" alt="Dior" hidden>
+        <span>Dior</span>
+      </li>
+      <li class="logo-slot">
+        <img src="images/clients/tumi.png" alt="Tumi" hidden>
+        <span>Tumi</span>
+      </li>
+      <li class="logo-slot">
+        <img src="images/clients/hilton.png" alt="Hilton" hidden>
+        <span>Hilton</span>
+      </li>
+      <li class="logo-slot">
+        <img src="images/clients/hakuhodo.jpeg" alt="Hakuhodo" hidden>
+        <span>Hakuhodo</span>
+      </li>
+      <li class="logo-slot">
+        <img src="images/clients/toyota.png" alt="Toyota" hidden>
+        <span>Toyota</span>
+      </li>
+    </ul>
+   </div>
   </section>
 
   <!-- ========== WORK LIST ========== -->
@@ -65,7 +97,7 @@
 
       <a class="work-item" href="tumi.html">
         <figure class="media-slot" style="--ar: 16/10;">
-          <img src="images/tumi/hero.webp" alt="Tumi flagship storefront in Omotesando at night">
+          <img src="images/tumi/hero.webp" alt="Tumi flagship storefront in Omotesando at night" style="object-position: 79% 50%;">
           <figcaption>Tumi</figcaption>
         </figure>
         <div class="work-item-text">
@@ -148,6 +180,11 @@
 </main>
 
 <script>
+  document.querySelectorAll('.logo-slot img').forEach(function (img) {
+    var show = function () { img.hidden = false; img.nextElementSibling.hidden = true; };
+    if (img.complete && img.naturalWidth > 0) show(); else img.addEventListener('load', show);
+  });
+
   document.querySelectorAll('.media-slot > img').forEach(function (img) {
     var markEmpty = function () { img.closest('.media-slot').classList.add('is-empty'); };
     if (img.complete && img.naturalWidth === 0) {
