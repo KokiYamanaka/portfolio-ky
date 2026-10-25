@@ -852,7 +852,25 @@ html {
 }
 
 /* ---- homepage hero ---- */
-.home-hero { padding-top: 64px; padding-bottom: 64px; }
+.home-hero {
+  padding-top: 64px;
+  padding-bottom: 64px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 40px;
+}
+.home-hero-photo {
+  width: clamp(140px, 28vw, 340px);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+@media (max-width: 560px) {
+  .home-hero { grid-template-columns: 1fr; }
+  .home-hero-photo { width: 56%; max-width: 240px; }
+}
 .home-hero-role {
   margin: 0 0 28px;
   font-size: clamp(11px, 1.3vw, 14px);
