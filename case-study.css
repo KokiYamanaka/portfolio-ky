@@ -988,3 +988,64 @@ html {
 /* LINE jpg has an off-white background: lift it to pure white so no box shows */
 .logo-slot img[src$=".jpg"] { filter: grayscale(1) brightness(1.06) contrast(1.4); opacity: 1; }
 .logo-slot img { height: 100%; width: auto; max-width: 100%; object-fit: contain; filter: grayscale(1); mix-blend-mode: multiply; opacity: .75; }
+
+/* ---- uniform card width: every card in every row is the same size ---- */
+.work-list { --card-w: calc((100% - 60px) / 4 * 0.75); }
+.work-list > .work-item,
+.work-list > .work-col { flex: 0 0 var(--card-w); min-width: 0; }
+@media (max-width: 900px) {
+  .work-list { --card-w: calc((100% - 20px) / 2.4 * 0.75); }
+}
+@media (max-width: 560px) {
+  .work-list { --card-w: 44%; }
+}
+
+/* ---- homepage Past Work: wide, short cards stacked vertically (#work only) ---- */
+#work .work-list,
+#work .work-list--labeled {
+  flex-direction: column;
+  overflow: visible;
+  gap: 28px;
+}
+#work .work-list > .work-item,
+#work .work-list > .work-col { flex: none; width: 100%; }
+#work .work-col .work-item { width: 100%; }
+#work .work-col .work-group-label { margin-bottom: 20px; min-height: 0; }
+#work .work-item {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) 1fr;
+  gap: 28px;
+  align-items: center;
+}
+/* ~40% shorter than the old 9:16 card */
+#work .work-item .media-slot { aspect-ratio: 16 / 10; margin: 0; }
+#work .work-item-text { margin-top: 0; }
+#work .work-item-text h3 { font-size: 26px; }
+#work .work-item-result {
+  margin-top: 14px;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: 0;
+  color: var(--cs-accent);
+}
+@media (max-width: 560px) {
+  #work .work-item { grid-template-columns: 1fr; gap: 14px; }
+  #work .work-item .media-slot { aspect-ratio: 16 / 9; }
+  #work .work-item-text h3 { font-size: 20px; }
+  #work .work-item-result { font-size: 14px; }
+}
+
+/* one-to-two sentence intro under each Past Work group label */
+#work .work-group-intro {
+  margin: 10px 0 28px;
+  max-width: 62ch;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--cs-body);
+}
+#work .work-col .work-group-label { margin-bottom: 0; }
+@media (max-width: 560px) {
+  #work .work-group-intro { font-size: 15px; margin-bottom: 20px; }
+}
