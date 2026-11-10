@@ -54,7 +54,7 @@ Local preview: `python3 -m http.server 3000` → http://localhost:3000
 - **File:** `index.html` ("02 Marketing" card, `href="novatrade.html"`, inside `.work-item-text`) and, if the case study page should show it too, `novatrade.html`. Style it like the result lines from task 3 (`.work-item-result`).
 - **Change:** add a result section to the IT consultancy card showing the outcome in numbers.
 - **Copy (from narration):**
-  - In one month: 8 short-form reels posted, 5.65k average views per reel, 19k views on the top reel, 200 new followers
+  - "In 1 month" as a lead-in line, then: 8 reels posted · 5.65k avg views · 19k max views · 200 followers  (homepage card only; the Novatrade page keeps the four full bullets)
   - (Do not mention "Tech Founder Hub"; the card refers to the account generally.)
 - **Open questions:**
   - "average 5.65k" and "19k max views" are assumed to be views per reel, so "5.65k average views". Confirm.

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Short-Form Video</title>
+<meta name="description" content="Short-form video editing samples.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="case-study.css?v=52">
+</head>
+<body class="cs-page">
+
+<header class="cs-header">
+  <div class="cs-header-inner cs-container">
+    <a class="cs-brand" href="index.html" aria-label="Koki Yamanaka — home">
+      <svg class="cs-brand-mark" viewBox="0 0 28 28" aria-hidden="true">
+        <path d="M4 24 24 4M4 4h14M4 4v14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square"/>
+      </svg>
+      <span>Koki Yamanaka</span>
+    </a>
+    <button class="cs-menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="siteMenu">
+      <span class="cs-menu-toggle-label">Menu</span>
+    </button>
+  </div>
+</header>
+
+<nav class="cs-menu" id="siteMenu" hidden>
+  <div class="cs-menu-inner cs-container">
+    <a href="index.html">Profile</a>
+    <a href="index.html#work">Case Studies</a>
+    <a href="reels.html">Short-Form Video</a>
+    <a href="https://www.linkedin.com/in/koki-yamanaka-48b186243" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</nav>
+
+<main>
+
+  <header class="cs-container cs-hero">
+    <span class="cs-eyebrow">Editing</span>
+    <h1 class="cs-title">Short-Form Video</h1>
+  </header>
+
+  <section class="cs-section cs-container" id="portfolio">
+    <h2 class="cs-section-title">Portfolio</h2>
+    <div class="short-grid">
+      <article class="short-card">
+        <h3>Tech Entrepreneur Biography <a class="short-ig" href="https://www.instagram.com/techfounders_hub/" target="_blank" rel="noopener" aria-label="Open @techfounders_hub on Instagram" title="@techfounders_hub on Instagram"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg></a></h3>
+        <div class="short-meta">
+          <p class="short-result">19K views</p>
+          <p class="short-tools">Manual edit in CapCut</p>
+        </div><!-- result: add numbers here -->
+        <video controls playsinline preload="metadata" src="videos/tech-entrepreneur-biography.mp4"></video>
+      </article>
+      <article class="short-card">
+        <h3>Simple money lesson from hamster</h3>
+        <div class="short-meta">
+          <p class="short-result">1.4K views</p>
+          <p class="short-tools">Claude Code + Qwen</p>
+        </div><!-- result: add numbers here -->
+        <video controls playsinline preload="metadata" src="videos/short3.mp4"></video>
+      </article>
+      <article class="short-card">
+        <h3>Biography Motion Design</h3>
+        <div class="short-meta">
+          <p class="short-result">50+ scenes created</p>
+          <p class="short-tools">Remotion + Claude Code</p>
+        </div><!-- result: add numbers here -->
+        <video controls playsinline preload="metadata" src="videos/short2.mp4"></video>
+      </article>
+      <article class="short-card">
+        <h3>Musician Biography</h3>
+        <div class="short-meta">
+          <p class="short-result"></p>
+          <p class="short-tools">Manual edit in CapCut</p>
+        </div>
+        <video controls playsinline preload="metadata" src="videos/musician-biography.mov"></video>
+      </article>
+      <article class="short-card">
+        <h3>Pixel Style Animation</h3>
+        <div class="short-meta">
+          <p class="short-result"></p>
+          <p class="short-tools">Kling AI</p>
+        </div><!-- result: add numbers here -->
+        <video controls playsinline preload="metadata" src="videos/short1.mp4"></video>
+      </article>
+      <article class="short-card">
+        <h3>Editing Tutorial</h3>
+        <div class="short-meta">
+          <p class="short-result"></p>
+          <p class="short-tools">Manual edit in CapCut</p>
+        </div>
+        <video controls playsinline preload="metadata" src="videos/edit-tutorial-1.mov?v=2"></video>
+      </article>
+    </div>
+  </section>
+
+  <section class="cs-section cs-container" id="framework">
+    <h2 class="cs-section-title">Framework</h2>
+    <div class="short-grid">
+      <a class="short-card framework-card" href="pect.html">
+        <h3>PECT Framework</h3>
+        <div class="short-meta">
+          <p class="short-tools">Grow any Instagram account with consistency</p>
+        </div>
+        <img src="images/pect/hero-wide.webp" alt="PECT Framework: how to grow your Instagram without luck">
+      </a>
+    </div>
+  </section>
+
+  <footer class="cs-footer cs-container">
+    <a href="index.html">&larr; Back to portfolio</a>
+  </footer>
+
+</main>
+
+<script>
+  document.querySelectorAll('.short-card video').forEach(function (v) {
+    v.addEventListener('error', function () { v.classList.add('is-empty'); });
+    v.addEventListener('loadedmetadata', function () { v.classList.remove('is-empty'); });
+  });
+
+  document.querySelectorAll('.media-slot > img').forEach(function (img) {
+    var markEmpty = function () { img.closest('.media-slot').classList.add('is-empty'); };
+    if (img.complete && img.naturalWidth === 0) {
+      markEmpty();
+    } else {
+      img.addEventListener('error', markEmpty);
+    }
+  });
+
+  (function () {
+    var toggle = document.getElementById('menuToggle');
+    var menu = document.getElementById('siteMenu');
+    var label = toggle.querySelector('.cs-menu-toggle-label');
+
+    toggle.addEventListener('click', function () {
+      var willOpen = menu.hidden;
+      menu.hidden = !willOpen;
+      toggle.setAttribute('aria-expanded', String(willOpen));
+      label.textContent = willOpen ? 'Close' : 'Menu';
+    });
+  })();
+</script>
+
+</body>
+</html>
