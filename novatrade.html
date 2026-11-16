@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Analytics (GA4) -->
+<script>
+if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-XX8WPGD8Z6';
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XX8WPGD8Z6');
+}
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Novatrade — Case Study</title>
@@ -29,7 +42,6 @@
 <nav class="cs-menu" id="siteMenu" hidden>
   <div class="cs-menu-inner cs-container">
     <a href="index.html">Profile</a>
-    <a href="index.html#work">Case Studies</a>
     <a href="https://www.linkedin.com/in/koki-yamanaka-48b186243" target="_blank" rel="noopener">LinkedIn</a>
   </div>
 </nav>
